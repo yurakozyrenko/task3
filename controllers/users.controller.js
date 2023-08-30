@@ -27,7 +27,6 @@ class UsersControllers {
 
     async postUser(user) {
         let users = await UsersService.getUsers();
-        users.length === 0 ? (user.id = 1) : (user.id = ++users.at(-1).id);
         users.push(user);
         UsersService.setUsers(users);
         return user;
