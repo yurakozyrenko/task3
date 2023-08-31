@@ -12,7 +12,7 @@ class UsersService {
     setUsers(users) {
         new Promise((res, rej) => {
         fs.writeFile('data.json', JSON.stringify(users, null, 4), (err) => {
-            if (err) rej(err)
+            if (err) throw err('Do not read');
                 else res()
         });
     })
