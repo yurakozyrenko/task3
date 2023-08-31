@@ -35,7 +35,7 @@ class UsersControllers {
             user.id = i;
         }
         users.push(user);
-        await UsersService.setUsers(users);
+        UsersService.setUsers(users);
         return user;
     }
 
