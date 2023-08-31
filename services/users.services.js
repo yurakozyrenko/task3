@@ -12,8 +12,8 @@ class UsersService {
     setUsers(users) {
         new Promise((res, rej) => {
         fs.writeFileSync('data.json', JSON.stringify(users, null, 4), (err) => {
-            if (err) reject(err)
-                else resolve()
+            if (err) rej(err)
+                else res()
         });
     })
   }
