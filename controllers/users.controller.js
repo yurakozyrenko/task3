@@ -27,13 +27,6 @@ class UsersControllers {
 
     async postUser(user) {
         let users = await UsersService.getUsers();
-        let i = 1;
-        if (users.length !== 0) {
-            i = users.at(-1).id;
-            user.id = ++i;
-        } else {
-            user.id = i;
-        }
         users.push(user);
         await UsersService.setUsers(users);
         return user;
