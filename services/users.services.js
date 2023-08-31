@@ -4,7 +4,7 @@ class UsersService {
     getUsers() {
         return new Promise((res, rej) => {
             fs.readFile('data.json', 'utf8', (err, data) => {
-                if (err) throw err;
+                if (err) throw err('Do not read');
                 res(JSON.parse(data));
             });
         });
