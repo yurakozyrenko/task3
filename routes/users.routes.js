@@ -151,7 +151,7 @@ router.post('/create', async (req, res) => {
         const newUser = await UsersControllers.postUser(req.body);
         res.send(newUser);
     } catch (error) {
-        return res.status(500).send(error);
+        return res.status(500).send({ success: false, message: error.message });
     }
 });
 
