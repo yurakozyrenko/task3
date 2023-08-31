@@ -10,11 +10,12 @@ class UsersService {
         });
     }
     setUsers(users) {
-        fs.writeFileSync(
-            'data.json',
-            JSON.stringify(users, null, 4),
-        );
-    }
+        new Promise((res, rej) => {
+        fs.writeFileSync('data.json', JSON.stringify(users, null, 4), (err) => {
+            if (err) reject(err)
+                else resolve()
+        });
+    })
 }
 
 module.exports = new UsersService();
