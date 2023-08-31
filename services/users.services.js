@@ -13,7 +13,7 @@ class UsersService {
         fs.writeFile(
             'data.json',
             JSON.stringify(users, null, 4),
-            function (err) {}
+            function (err, data) {}
         );
     }
 }
