@@ -10,10 +10,9 @@ class UsersService {
         });
     }
     setUsers(users) {
-        fs.writeFile(
+        fs.writeFileSync(
             'data.json',
             JSON.stringify(users, null, 4),
-            function (err, data) {}
         );
     }
 }
