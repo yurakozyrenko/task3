@@ -16,6 +16,6 @@ class UsersService {
                 else resolve()
         });
     })
+  }
 }
-
 module.exports = new UsersService();
